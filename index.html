@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+  <header class="header">
+    <h1>Bem-vindo ao Site</h1>
+    <button class="login-btn" onclick="openModal()">Login / Cadastro</button>
+  </header>
+
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>Cadastro de Usuário</h2>
+      <form id="cadastroForm" onsubmit="salvarCadastro(event)">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" required placeholder="(xx) x xxxx-xxxx"  id="telefone" oninput=mascara_telefone() maxlength="14">
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" maxlength="14"  required placeholder="xx.xxx.xxx/0001-xx"  id="cnpj" oninput=mascara_cnpj() maxlength="18">
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" required>
+
+        <button type="submit">Completar Cadastro</button>
+        <button type="button" onclick="closeModal()">Fechar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
